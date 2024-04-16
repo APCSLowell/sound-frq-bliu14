@@ -49,10 +49,10 @@ public class Sound
         k += 1;
       }
       else{
-        front == true;
+        front = true;
       }
     }
-    int[] ans = new[sample.length-count];
+    int[] ans = new int[sample.length-count];
     for(int i = count; i < sample.length; i++) {
       ans[i-count] = sample[count];
     }
