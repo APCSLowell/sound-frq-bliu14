@@ -44,7 +44,7 @@ public class Sound
     boolean front = false;
     /* to be implemented in part (b) */
     while(front == false) {
-      if(sample[k] == 0) {
+      if(samples[k] == 0) {
         count += 1;
         k += 1;
       }
@@ -52,10 +52,10 @@ public class Sound
         front = true;
       }
     }
-    int[] ans = new int[sample.length-count];
-    for(int i = count; i < sample.length; i++) {
-      ans[i-count] = sample[count];
+    int[] ans = new int[samples.length-count];
+    for(int i = count; i < samples.length; i++) {
+      ans[i-count] = samples[count];
     }
-    sample = count;
+    samples = count;
   }
 }
