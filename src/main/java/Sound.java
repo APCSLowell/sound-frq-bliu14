@@ -56,6 +56,6 @@ public class Sound
     for(int i = count; i < samples.length; i++) {
       ans[i-count] = samples[count];
     }
-    samples = count;
+    samples.clone(count);
   }
 }
