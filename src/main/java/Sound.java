@@ -22,7 +22,7 @@ public class Sound
         samples[i] = limit;
         count += 1;
       }
-      if(samples[i] > -limit) {
+      else if(samples[i] < -limit) {
         samples[i] = -limit;
         count += 1;
       }
@@ -39,23 +39,16 @@ public class Sound
    */
   public void trimSilenceFromBeginning()
   {
-    int count = 0;
-    int k = 0;
-    boolean front = false;
-    /* to be implemented in part (b) */
-    while(front == false) {
-      if(samples[k] == 0) {
-        count += 1;
-        k += 1;
-      }
-      else{
-        front = true;
-      }
+    ArrayList<Integer> a = new ArrayList<Integer>();
+    for(int i: samples) {
+      a.add(i);
     }
-    int[] ans = new int[samples.length-count];
-    for(int i = count; i < samples.length; i++) {
-      ans[i-count] = samples[count];
+    while(a.get(0)==0) {
+      a.remove(0);
     }
-    samples = ans.clone();
+    samples = new int[a.size()];
+    for(int i = 0; i < a.size(); i++) {
+      samples[i] = a.get(i);
+    }
   }
 }
